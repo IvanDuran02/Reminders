@@ -1,18 +1,12 @@
 package main
 
-import (
-	"time"
-)
-
 func main() {
-	list := TodoList()
+	taskList := TaskList()
 
-	currentTime := time.Now()
-
-	switch hour := currentTime.Hour(); hour {
-
-	case 0:
-		SendNotif(list[0])
+	for _, task := range taskList {
+		switch task.title {
+		case "gym":
+			SendNotif(task.message)
+		}
 	}
-
 }
