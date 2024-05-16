@@ -1,12 +1,7 @@
 package main
 
-func main() {
-	taskList := TaskList()
+import "reminders/cmd"
 
-	for _, task := range taskList {
-		switch task.title {
-		case "gym":
-			SendNotif(task.message)
-		}
-	}
+func main() {
+	cmd.Execute()
 }
